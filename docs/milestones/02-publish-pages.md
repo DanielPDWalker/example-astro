@@ -1,6 +1,6 @@
 # 02: Publish to GitHub Pages
 
-**Status:** planned
+**Status:** in progress
 **Depends on:** 01
 
 ## Goal
@@ -19,9 +19,9 @@ See [design.md](../design.md) for the repo name and branch decision.
 ## Tasks
 
 - [ ] Check `gh` is installed and `gh auth status` shows a login. If not, tell the user what to run.
-- [ ] Ask for the repo name (default `astro`).
-- [ ] Settle the branch: keep `master` and publish Pages from it, or the user renames it with `git branch -m master main`.
-- [ ] Give the user a commit message for milestone 01 and the docs. The user commits.
+- [x] Ask for the repo name (default `astro`). Chosen: `example-astro`.
+- [x] Settle the branch: keep `master` and publish Pages from it, or the user renames it with `git branch -m master main`. Chosen: rename to `main`.
+- [x] Give the user a commit message for milestone 01 and the docs. The user commits. (Already committed in 532cf6d.)
 - [ ] Give the user the command to create the GitHub repo and push. The user runs it:
       `gh repo create <repo> --public --source=. --remote=origin --push`
 - [ ] Enable Pages from the branch root (Claude runs this after the user confirms the push):
@@ -36,3 +36,5 @@ See [design.md](../design.md) for the repo name and branch decision.
 - [ ] The live URL shows all images with their titles.
 
 ## Notes
+
+- 2026-11-12: `gh` was not installed, so the `gh` check is blocked until the user installs it and runs `gh auth login`.
