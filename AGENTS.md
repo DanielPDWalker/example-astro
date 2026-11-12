@@ -26,6 +26,12 @@ All planning and design lives in `docs/`. Keep context lean: read only what the 
 
 New milestones: copy `docs/milestones/_template.md` and add a row to `planning.md`.
 
+## Images
+
+- The repo is public. Strip EXIF/XMP from every image before it goes into `images/`, because the Seestar S50 writes GPS coordinates. Copy from the original and leave the original untouched.
+- After stripping, check the copy has no EXIF block left.
+- Never write GPS coordinates or other location data into any file in the repo, docs included.
+
 ## Git
 
 - The only git command allowed is `git diff` (to see what has changed). Never run any other git command.

@@ -33,6 +33,6 @@ See [design.md](../design.md) for the repo name and branch decision.
 
 - [ ] The public GitHub repo exists and contains `index.html` and `images/`.
 - [ ] Pages is enabled and the latest build succeeded.
-- [ ] The live URL shows all images with their titles and object names.
+- [ ] The live URL shows all images with their titles.
 
 ## Notes
