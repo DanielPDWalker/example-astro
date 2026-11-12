@@ -4,8 +4,7 @@ A plain web page of astrophotography images, hosted on GitHub Pages.
 
 ## Requirements
 
-- `git`
-- [GitHub CLI](https://cli.github.com/) (`gh`), logged in with `gh auth login`
+- `git`, with an SSH key added to GitHub
 
 ## Run
 
@@ -13,7 +12,7 @@ Open `index.html` in a browser.
 
 ## Test
 
-None. Check the page locally, then at `https://<owner>.github.io/<repo>/` once published.
+None. Check the page locally, then live at https://danielpdwalker.github.io/example-astro/ after pushing to `main`.
 
 ## Docs
 

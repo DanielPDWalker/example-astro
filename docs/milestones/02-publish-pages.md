@@ -1,6 +1,6 @@
 # 02: Publish to GitHub Pages
 
-**Status:** in progress
+**Status:** done
 **Depends on:** 01
 
 ## Goal
@@ -14,27 +14,27 @@ The page from milestone 01 is live at `https://<owner>.github.io/<repo>/`.
 
 ## Relevant Design
 
-See [design.md](../design.md) for the repo name and branch decision.
+See [implemented_design.md](../implemented_design.md) for the repo name and branch decision.
 
 ## Tasks
 
-- [ ] Check `gh` is installed and `gh auth status` shows a login. If not, tell the user what to run.
+- [x] ~~Check `gh` is installed and `gh auth status` shows a login.~~ `gh` was not installed. The user did everything through `git` and the GitHub web UI instead.
 - [x] Ask for the repo name (default `astro`). Chosen: `example-astro`.
 - [x] Settle the branch: keep `master` and publish Pages from it, or the user renames it with `git branch -m master main`. Chosen: rename to `main`.
-- [x] Give the user a commit message for milestone 01 and the docs. The user commits. (Already committed in 532cf6d.)
-- [ ] Give the user the command to create the GitHub repo and push. The user runs it:
-      `gh repo create <repo> --public --source=. --remote=origin --push`
-- [ ] Enable Pages from the branch root (Claude runs this after the user confirms the push):
-      `gh api -X POST repos/<owner>/<repo>/pages -f "source[branch]=<branch>" -f "source[path]=/"`
-- [ ] Poll `gh api repos/<owner>/<repo>/pages/builds/latest` until the build finishes.
-- [ ] Fetch `https://<owner>.github.io/<repo>/`, confirm it returns the page and the image URLs load, and give the user the URL.
+- [x] Give the user a commit message for milestone 01 and the docs. The user commits. (Milestone 01 was already committed in 532cf6d.)
+- [x] The user creates the repo and pushes. Done instead by creating an empty public repo on github.com, then `git remote add origin git@github.com:DanielPDWalker/example-astro.git` and `git push -u origin main`.
+- [x] Enable Pages from the branch root. The user did this in Settings → Pages (Deploy from a branch, `main`, `/ (root)`) instead of through `gh api`.
+- [x] Wait for the build. Claude polled the live URL with `curl` instead of the `gh` builds API. It returned 200 about 50s after Pages was saved.
+- [x] Fetch `https://danielpdwalker.github.io/example-astro/` and confirm the page and the image URLs load.
 
 ## Acceptance Criteria
 
-- [ ] The public GitHub repo exists and contains `index.html` and `images/`.
-- [ ] Pages is enabled and the latest build succeeded.
-- [ ] The live URL shows all images with their titles.
+- [x] The public GitHub repo exists and contains `index.html` and `images/`.
+- [x] Pages is enabled and the latest build succeeded.
+- [x] The live URL shows all images with their titles. The page has 4 `<img>` tags and all 4 images return 200 `image/jpeg`.
 
 ## Notes
 
-- 2026-11-12: `gh` was not installed, so the `gh` check is blocked until the user installs it and runs `gh auth login`.
+- `gh` is not needed. A plain `git` push plus the web UI covers it.
+- Use the SSH remote URL (`git@github.com:...`), not HTTPS. The user authenticates with an SSH key, and an HTTPS remote prompts for a token instead.
+- Live URL: https://danielpdwalker.github.io/example-astro/
