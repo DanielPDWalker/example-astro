@@ -13,5 +13,5 @@ Status: `planned` · `in progress` · `done`
 
 - Keep it minimal: plain HTML and a little CSS. No JavaScript, frameworks, thumbnails or lightbox.
 - The user runs every git command (commit, push, remote). Claude only runs `git diff`, and gives the exact commands to run.
-- The repo is public. Strip EXIF/GPS from any image before it is added to `images/` (done for the first four in 01).
+- The repo is public. Strip EXIF/GPS from any image before it is added to `images/` (done for the first four in 01, and for NGC 2264 and NGC 891 added later). NGC 891 was a 2× upscaled export with heavy noise; the repo copy is denoised (wavelet luminance denoise outside stars/galaxy, chroma smoothing, slight black point). Satellite trails in NGC 2264 are left as shot.
 - The branch is `main`, and Pages publishes from its root. Pushing to `main` updates the live site.
